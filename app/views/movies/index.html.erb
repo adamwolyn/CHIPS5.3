@@ -17,11 +17,11 @@
 <table class="table table-striped col-md-12" id="movies">
   <thead>
     <tr>
-      <th class="<%= ("bg-warning hilite" if sessions[:sort] == "title") %>">
+      <th class="<%= ("bg-warning hilite" if session[:sort] == "title") %>">
       <%= link_to "Movie Title", movies_path(sort: "title", ratings: @ratings_to_show.map{|e|[e,1]}.to_h), id: "title_header" %>
       </th>
       <th>Rating</th>
-      <th class="<%= ("bg-warning hilite" if sessions[:sort] == "release_date") %>">
+      <th class="<%= ("bg-warning hilite" if session[:sort] == "release_date") %>">
         <%= link_to "Release Date", movies_path(sort: "release_date", ratings: @ratings_to_show.map{|e|[e,1]}.to_h), id: "release_date_header" %>
       </th>
       <th>More Info</th>
