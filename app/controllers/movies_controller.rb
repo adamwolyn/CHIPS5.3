@@ -10,11 +10,18 @@ class MoviesController < ApplicationController
     @all_ratings = Movie.all_ratings
     if not params[:ratings]
       @ratings_to_show = [ ]
-      @movies = Movie.all
+      movies = Movie.all
     else
       @ratings_to_show = params[:ratings].keys
-      @movies = Movie.with_ratings(params[:ratings].keys)
+      movies = Movie.with_ratings(params[:ratings].keys)
     end
+    
+    if params[:sort]
+      movies = movies.order(params[:sort])
+    end
+    
+    @movies = movies
+    
   end
 
   def new
