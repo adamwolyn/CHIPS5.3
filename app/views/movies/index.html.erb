@@ -17,9 +17,8 @@
 <table class="table table-striped col-md-12" id="movies">
   <thead>
     <tr>
-      class="p-3 mb-2 bg-warning text-dark"
       <th class="<%= ("hilite" if params[:sort] == "title") %>">
-      <%= link_to "Movie Title", movies_path(sort: "title"), id: "title_header" %>
+      <%= link_to "Movie Title", movies_path(sort: "title"), id: "title_header", class: "p-3 mb-2 bg-warning text-dark" %>
       </th>
       <th>Rating</th>
       <th class="<%= ("hilite" if params[:sort] == "release_date") %>">
